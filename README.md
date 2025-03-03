@@ -1,2 +1,2 @@
 ### Чирич Евгений Дмитриевич 210101
-https://github.com/Hackir0/Inis/
+https://hackir0.github.io/Inis/
