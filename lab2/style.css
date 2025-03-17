@@ -1,53 +1,63 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #e8f4f8;
 }
 
-#shirts-container {
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.shirt-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
 }
 
 .shirt-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    background: white;
+    border: 2px solid #34495e;
+    border-radius: 12px;
     padding: 20px;
-    width: 200px;
+    width: 220px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.shirt-card img {
-    max-width: 100%;
+.shirt-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.shirt-image {
+    width: 100%;
     height: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
     border-radius: 8px;
 }
 
-.shirt-card h2 {
-    font-size: 1.2em;
-    margin: 10px 0;
+.button-group {
+    margin-top: 15px;
 }
 
-.shirt-card p {
-    font-size: 0.9em;
-    color: #555;
-}
-
-.shirt-card button {
-    background-color: #007bff;
+button {
+    background: #3498db;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10px 15px;
     cursor: pointer;
-    margin-top: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 1em;
 }
 
-.shirt-card button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+button:hover {
+    background: #2980b9;
 }

@@ -1,44 +1,22 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const shirtsContainer = document.getElementById("shirts-container");
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("shirt-container");
 
     shirts.forEach(shirt => {
-        const shirtCard = document.createElement("div");
-        shirtCard.className = "shirt-card";
+        const colorKeys = Object.keys(shirt.colors);
+        const firstColor = colorKeys.length > 0 ? colorKeys[0] : null;
+        const frontImage = firstColor ? shirt.colors[firstColor].front : shirt.default.front;
 
-        // Создаем изображение
-        const image = document.createElement("img");
-        // Используем путь из shirts.js
-        image.src = shirt.image; // Предполагаем, что shirt.image содержит полный URL или путь
-        image.alt = shirt.name;
-        image.onerror = function() {
-            this.src = "placeholder.jpg"; // Запасное изображение, если основное не загрузилось
-        };
+        const card = document.createElement("div");//создаем новую карточку
+        card.classList.add("shirt-card");
 
-        // Название майки
-        const name = document.createElement("h2");
-        name.textContent = shirt.name;
+        card.innerHTML = `
+            <img src="${frontImage}" alt="${shirt.name}" class="shirt-image">
+            <h2>${shirt.name}</h2>
+            <p>Доступно цветов: ${colorKeys.length}</p>
+            <button class="quick-view">Quick View</button>
+            <button class="see-page">See Page</button>
+        `;
 
-        // Цена
-        const price = document.createElement("p");
-        price.textContent = `$${shirt.price.toFixed(2)}`;
-
-        // Описание
-        const description = document.createElement("p");
-        description.textContent = shirt.description;
-
-        // Кнопка "See Page"
-        const seePageButton = document.createElement("button");
-        seePageButton.textContent = "See Page";
-        seePageButton.disabled = true; // Кнопка пока не активна
-
-        // Добавляем элементы в карточку
-        shirtCard.appendChild(image);
-        shirtCard.appendChild(name);
-        shirtCard.appendChild(price);
-        shirtCard.appendChild(description);
-        shirtCard.appendChild(seePageButton);
-
-        // Добавляем карточку в контейнер
-        shirtsContainer.appendChild(shirtCard);
+        container.appendChild(card);
     });
 });
