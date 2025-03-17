@@ -27,13 +27,8 @@ h1 {
     width: 220px;
     text-align: center;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.shirt-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-}
 
 .shirt-image {
     width: 100%;
